@@ -1,0 +1,174 @@
+
+\subsection{ILP Setup}
+
+\subsubsection{Performance Efficient Computation Offloading ILP Setup for Inference}
+
+We formulated the scheduling of inference in DNNs as an ILP with tractable number of variables. In our method, first we profile the delay and energy consumption of consecutive layers of size $m$ $\in$ $\{1, 2,\dots, N\}$. Thus, we will have
+  \begin{equation}
+      \begin{split}
+N + (N-1) + ... + 1 = N(N+1)/2
+  \end{split}
+\end{equation}
+number of different profiling values for delay and energy.
+Considering layer $i$ to layer $j$ to be computed either on the mobile device or cloud server, we assign two binary variables $m_{i,j}$ and $c_{i,j}$, respectively. Download and upload communication delays needs to be added to the execution time, when switching from/to cloud to/from mobile, respectively.
+
+\begin{equation}
+      \begin{split}
+T_{computation} &= \sum_{i=1}^{n}{\sum_{j=i}^{n}{
+(m_{i,j}.T_{mobile_{L_{i,j}}} + c_{i,j}.T_{cloud_{L_{i,j}}})
+}}
+  \end{split}
+\end{equation}
+  \begin{equation}
+      \begin{split}
+T_{communication} &= \sum_{i=1}^{n}{\sum_{j=i}^{n}{\sum_{k=j+1}^{n}{m_{i,j}.c_{j+1,k}.T_{upload_{L_j}}}}} \\
+& + \sum_{i=1}^{n}{\sum_{j=i}^{n}{\sum_{k=j+1}^{n}{c_{i,j}.m_{j+1,k}.T_{download_{L_j}}}}} \\
+& + \sum_{i=1}^{n}{c_{1,i}.T_{upload_{L_i}}} \\
+& + \sum_{i=1}^{n}{c_{i,n}.T_{download_{L_n}}}
+  \end{split}
+  \label{eq: full_pass_comm}
+\end{equation}
+
+\begin{equation}
+T_{total} = T_{computation} + T_{communication}\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace
+\end{equation}
+
+$T_{mobile_{L_{i,j}}}$ and $T_{cloud_{L_{i,j}}}$ represent the execution time of the i$^{th}$ layer to the j$^{th}$ layer on the mobile and cloud, respectively. $T_{download_{L_i}}$ and $T_{upload_{L_i}}$ represent the latency of downloading and uploading the output of the i$^{th}$ layer, respectively. Considering each set of the consecutive layers, whenever $m_{i,j}$ and one of $\{c_{j+1,k}\}_{k=j+1:n}$ are equal to one, the output of the j$^{th}$ layer is uploaded to the cloud. The same argument applies to downloading.
+We also note that the last two terms in Eq.~\ref{eq: full_pass_comm} represent the condition by which the last layer is computed on the cloud and we need to download the output to the mobile device, and the first layer is computed on the cloud and we need to upload the input to the cloud, respectively. To support for residual architectures, we need to add a pair of download and upload terms similar to the first two terms in Eq.~\ref{eq: full_pass_comm} for the starting and ending layers of each residual block. In order to guarantee that all layers are computed exactly once, we need to add the following set of constraints:
+
+\begin{equation}
+	\begin{split}
+		\forall m \in {1:n}: \sum_{i=1}^{m}{\sum_{j=m}^{n}{(m_{i,j} + c_{i,j})}} = 1
+  	\end{split}
+\end{equation}
+
+Because of the non-linearity of multiplication, an additional step is needed to transform Eq.~\ref{eq: full_pass_comm} to the standard form of ILP. We define two sets of new variables:
+
+\begin{equation}
+\label{eq: download_upload_binary_var} 
+	\begin{aligned}
+      &u_{i,j} = m_{i,j}.\sum_{k=j+1}^{n}{c_{j+1,k}} \\
+      &d_{i,j} = c_{i,j}.\sum_{k=j+1}^{n}{m_{j+1,k}}
+     \end{aligned}
+\end{equation}
+
+with the following constraints:
+
+\begin{equation}\label{eq: download_upload_constraints} 
+	\begin{aligned}
+      &u_{i,j} \leq m_{i,j}\\
+      &u_{i,j} \leq \sum_{k=j+1}^{n}{c_{j+1,k}} \\
+      &m_{i,j} + \sum_{k=j+1}^{n}{c_{j+1,k}} - u_{i,j} \leq 1\\
+      &d_{i,j} \leq c_{i,j}\\
+      &d_{i,j} \leq \sum_{k=j+1}^{n}{m_{j+1,k}} \\
+      &c_{i,j} + \sum_{k=j+1}^{n}{m_{j+1,k}} - d_{i,j} \leq 1
+	\end{aligned}
+\end{equation}
+
+The first two constraints ensure that $u_{i,j}$ will be zero if either $m_{i,j}$ or $\sum_{l=j+1}^{n}{c_{j+1,l}}$ are zero. The third inequality guarantees that $u_{i,j}$ will take value one if both binary variables, $m_{i,j}$ and $\sum_{l=j+1}^{n}{c_{j+1,l}}$, are set to one. The same reasoning works for $d_{i,j}$. In summary, the total number of variables in our ILP formulation will be $4N(N+1)/2$, where $N$ is total number of layers in the network. 
+
+\subsubsection{Energy Efficient Computation Offloading ILP Setup for Inference}
+Because of the nature of the application, we only care about the energy consumption on the mobile side. We formulate ILP as follows:
+  \begin{equation}
+      \begin{split}
+E_{computation} &= \sum_{i=1}^{n}{\sum_{j=i}^{n}{
+m_{i,j}.E_{mobile_{L_{i,j}}}}\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace}\label{eq: energy_comp}
+  \end{split}
+\end{equation}
+  \begin{equation}
+      \begin{split}
+E_{communication} &= \sum_{i=2}^{n}{\sum_{j=i}^{n}{m_{i,j}.E_{download_{L_i}}}} \\
+& + \sum_{i=1}^{n}{\sum_{j=i}^{n-1}{m_{i,j}.E_{upload_{L_j}}}} \\
+& + (\sum_{i=1}^{n}{(1-m_{1,i}) - (n-1)).E_{upload_{L_1}}} \\
+& + (\sum_{i=1}^{n}{(1-m_{i,n}) - (n-1)).E_{download_{L_n}}}\label{eq: energy_comm}
+  \end{split}
+\end{equation}
+  \begin{equation}
+E_{total} = E_{computation} + E_{communication}\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace
+\end{equation}
+
+$E_{mobile_{L_{i,j}}}$ and $E_{cloud_{L_{i,j}}}$ represent the amount of energy required to compute the i$^{th}$ layer to the j$^{th}$ layer on the mobile and cloud, respectively. $E_{download_{L_i}}$ and $E_{upload_{L_i}}$ represent the energy required to download and upload the output of i$^{th}$ layer, respectively.
+Similar to performance efficient ILP constraints, each layer should be executed exactly once:
+
+\begin{equation}
+      \begin{split}
+\forall m \in {1:n}: \sum_{i=1}^{m}{\sum_{j=m}^{n}{m_{i,j}}} \leq 1
+  \end{split}
+\end{equation}
+
+The ILP problem can be solved for different set of parameters (e.g. different uplink and download speeds), and then the scheduling results can be stored as a look-up table in the mobile device. Moreover because the number of variables in this setup is tractable solving ILP is quick. For instance, solving ILP for AlexNet takes around 0.045 seconds on Intel(R) Core(TM) i7-3770 CPU with MATLAB\textregistered's intlinprog() function using primal simplex algorithm.\\
+\subsubsection{Performance Efficient Computation Offloading ILP Setup for Training}
+The ILP formulation of online training phase is very similar to that of inference. In online training we have $2N$ layers instead of $N$ obtained by mirroring the DNN, where the second $N$ layers are backward propagation. Moreover, we need to download the weights that are updated in the cloud to the mobile. We assume that the cloud server always has the most updated version of the weights and does not require the mobile device to upload the updated weights. The following terms need to be added for the ILP setup of training:
+
+\begin{equation}
+      \begin{split}
+T_{computation} &= \sum_{i=1}^{2n}{\sum_{j=i}^{2n}{
+(m_{i,j}.T_{mobile_{L_{i,j}}} + c_{i,j}.T_{cloud_{L_{i,j}}})
+}}\label{eq: full_pass_comp}
+  \end{split}
+\end{equation}
+  \begin{equation}
+      \begin{split}
+T_{communication} &= \sum_{i=1}^{2n}{\sum_{j=i}^{2n}{\sum_{k=j+1}^{2n}{m_{i,j}.c_{j+1,k}.T_{upload_{L_j}}}}} \\
+& + \sum_{i=1}^{2n}{\sum_{j=i}^{2n}{\sum_{k=j+1}^{2n}{c_{i,j}.m_{j+1,k}.T_{download_{L_j}}}}} \\
+& + \sum_{i=1}^{n}{c_{1,i}.T_{upload_{L_i}}} \\
+& + \sum_{i=n+1}^{2n}{\sum_{j=i}^{2n}{c_{i,j}.T_{download_{W_{i}}}}}
+  \end{split}
+\end{equation}
+
+\begin{equation}
+T_{total} = T_{computation} + T_{communication}\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace
+\end{equation}
+
+\subsubsection{Energy Efficient Computation Offloading ILP Setup for Training}
+  \begin{equation}
+      \begin{split}
+E_{computation} &= \sum_{i=1}^{2n}{\sum_{j=i}^{2n}{
+m_{i,j}.E_{mobile_{L_{i,j}}}}\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace}\label{eq: energy_comp_train}
+  \end{split}
+\end{equation}
+  \begin{equation}
+      \begin{split}
+E_{communication} &= \sum_{i=2}^{2n}{\sum_{j=i}^{2n}{m_{i,j}.E_{download_{L_i}}}} \\
+& + \sum_{i=1}^{2n}{\sum_{j=i}^{2n-1}{m_{i,j}.E_{upload_{L_j}}}} \\
+& + (\sum_{i=1}^{2n}{(1-m_{1,i}) - (2n-1)).E_{upload_{L_1}}} \\
+& + (\sum_{i=n+1}^{2n}\sum_{j=i}^{2n}{(1-m_{i,j}) - (n-1)}).E_{download_{W_{i}}}\label{eq: energy_comm_train}
+  \end{split}
+\end{equation}
+  \begin{equation}
+E_{total} = E_{computation} + E_{communication}\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace
+\end{equation}
+
+\subsubsection{Scenarios}
+There can be different optimization scenarios defined for ILP as listed below:
+\begin{itemize}
+\item \textbf{Performance efficient computation:} In this case, it is sufficient to solve the ILP formulation for performance efficient computation offloading.
+\item \textbf{Energy efficient computation:} In this case, it is sufficient to solve the ILP formulation for energy efficient computation offloading.
+\item \textbf{Battery budget limitation:} In this case, based on the available battery, the operating system can decide to dedicate a specific amount of energy consumption to each application. By adding the following constraint to the performance efficient ILP formulation, our framework would adapt to battery limitations: 
+\begin{equation}
+\begin{split}
+	E_{computation} + E_{communication} \leq E_{ubound}
+\end{split}
+\end{equation}
+
+\item\textbf{Cloud limited resources:} In the presence of cloud server congestion or limitations on user's subscription, we can apply execution time constraints to each application to alleviate the server load:
+
+\begin{equation}
+\begin{split}
+\sum_{i=1}^{n}{\sum_{j=i}^{n}{
+c_{i,j}.T_{cloud_{L_{i,j}}}}} \leq T_{ubound}
+\end{split}
+\end{equation}
+
+\item \textbf{QoS:} In this scenario, we minimize the required energy consumption while meeting a specified deadline:
+
+\begin{equation}
+      \begin{split}
+min\{E_{computation} + E_{communication}\} \\
+T_{computation} + T_{communication} \leq T_{QoS}
+  \end{split}
+\end{equation}
+
+
+This constraint could be applied to both energy and performance efficient ILP formulations.
+\end{itemize}

@@ -1,0 +1,82 @@
+\documentclass[sigconf]{acmart}
+\settopmatter{printacmref=false} % Removes citation information below abstract
+\pagestyle{plain} % removes running headers
+\renewcommand\footnotetextcopyrightpermission[1]{} % removes footnote with conference information in first column
+
+\usepackage{booktabs} % For formal tables
+\usepackage{adjustbox}
+\usepackage{multirow}
+\usepackage{amsmath}
+\usepackage[linesnumbered,ruled]{algorithm2e}
+%\usepackage{algorithm}% http://ctan.org/pkg/algorithm
+%\usepackage{algpseudocode}% http://ctan.org/pkg/algorithmicx
+% Copyright
+%\setcopyright{none}
+%\setcopyright{acmcopyright}
+%\setcopyright{acmlicensed}
+\setcopyright{rightsretained}
+%\setcopyright{usgov}
+%\setcopyright{usgovmixed}
+%\setcopyright{cagov}
+%\setcopyright{cagovmixed}
+
+
+% DOI
+%acmDOI{10.475/123_4}
+
+% ISBN
+%acmISBN{123-4567-24-567/08/06}
+
+%Conference
+%\acmConference[WOODSTOCK'97]{ACM Woodstock conference}{July 1997}{El
+%  Paso, Texas USA}
+%\acmYear{1997}
+%\copyrightyear{2016}
+
+%\acmPrice{15.00}
+
+%\acmSubmissionID{123-A12-B3}
+
+\begin{document}
+\title{JointDNN: An Efficient Training and Inference Engine for Intelligent Mobile Cloud Computing Services}
+%titlenote{Produces the permission block, and
+% copyright information}
+%subtitle{Extended Abstract}
+%subtitlenote{The full version of the author's guide is available as
+% \texttt{acmart.pdf} document}
+
+% \textbf{HERE IS THE STORY: \\
+% Here is a problem \\
+% It's an interesting problem \\
+% It's an unsolved problem \\
+% Here is my idea \\
+% My idea works (details, data) \\
+% Here's how my idea compares to other people's approaches} \\
+
+% \textbf{Saeed questions:} \\ 
+% spelling: mobile-device or mobile device, make it consistent \\
+% layer, filter, output of layer, channel \\
+% Change GPU4DNN to a more recent reference \\
+% Cite this maybe: [NIPS 2017] Towards Accurate Binary Convolutional Neural Network
+% Yanzhi
+% Single only platform, use the terminology the first time it has been used, check for dash! 
+\input{authors}
+\input{abstract}
+\keywords{mobile cloud computing, deep learning, deep neural networks, intelligent services}
+
+
+\maketitle
+
+\input{introduction}
+\input{model}
+\input{experiment}
+\input{results}
+
+\input{related_work}
+\input{conclusion}
+
+\input{samplebody-conf}
+\bibliographystyle{ACM-Reference-Format}
+\bibliography{sample-bibliography}
+
+\end{document}

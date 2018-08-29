@@ -1,0 +1,1006 @@
+%%% ====================================================================
+%%%  BibTeX-file{
+%%%     author          = "Gerry Murray",
+%%%     version         = "1.2",
+%%%     date            = "2 April 2012",
+%%%     filename        = "acmsmall-sample-bibfile.bib",
+%%%     address         = "ACM, NY",
+%%%     email           = "murray at hq.acm.org",
+%%%     codetable       = "ISO/ASCII",
+%%%     keywords        = "ACM Reference Format, bibliography, citation, references",
+%%%     supported       = "yes",
+%%%     docstring       = "This BibTeX database file contains 'bibdata' entries
+%%%                        that 'match' the examples provided in the Specifications Document
+%%%                        AND, also, 'legacy'-type bibs. It should assist authors in
+%%%                        choosing the 'correct' at-bibtype and necessary bib-fields
+%%%                        so as to obtain the appropriate ACM Reference Format output.
+%%%                        It also contains many 'Standard Abbreviations'. "
+%%%  }
+%%% ====================================================================
+
+% Journals
+
+% First the Full Name is given, then the abbreviation used in the AMS Math
+% Reviews, with an indication if it could not be found there.
+% Note the 2nd overwrites the 1st, so swap them if you want the full name.
+
+ %{AMS}
+ @String{AMSTrans = "American Mathematical Society Translations" }
+ @String{AMSTrans = "Amer. Math. Soc. Transl." }
+ @String{BullAMS = "Bulletin of the American Mathematical Society" }
+ @String{BullAMS = "Bull. Amer. Math. Soc." }
+ @String{ProcAMS = "Proceedings of the American Mathematical Society" }
+ @String{ProcAMS = "Proc. Amer. Math. Soc." }
+ @String{TransAMS = "Transactions of the American Mathematical Society" }
+ @String{TransAMS = "Trans. Amer. Math. Soc." }
+
+ %ACM
+ @String{CACM = "Communications of the {ACM}" }
+ @String{CACM = "Commun. {ACM}" }
+ @String{CompServ = "Comput. Surveys" }
+ @String{JACM = "J. ACM" }
+ @String{ACMMathSoft = "{ACM} Transactions on Mathematical Software" }
+ @String{ACMMathSoft = "{ACM} Trans. Math. Software" }
+ @String{SIGNUM = "{ACM} {SIGNUM} Newsletter" }
+ @String{SIGNUM = "{ACM} {SIGNUM} Newslett." }
+
+ @String{AmerSocio = "American Journal of Sociology" }
+ @String{AmerStatAssoc = "Journal of the American Statistical Association" }
+ @String{AmerStatAssoc = "J. Amer. Statist. Assoc." }
+ @String{ApplMathComp = "Applied Mathematics and Computation" }
+ @String{ApplMathComp = "Appl. Math. Comput." }
+ @String{AmerMathMonthly = "American Mathematical Monthly" }
+ @String{AmerMathMonthly = "Amer. Math. Monthly" }
+ @String{BIT = "{BIT}" }
+ @String{BritStatPsych = "British Journal of Mathematical and Statistical
+          Psychology" }
+ @String{BritStatPsych = "Brit. J. Math. Statist. Psych." }
+ @String{CanMathBull = "Canadian Mathematical Bulletin" }
+ @String{CanMathBull = "Canad. Math. Bull." }
+ @String{CompApplMath = "Journal of Computational and Applied Mathematics" }
+ @String{CompApplMath = "J. Comput. Appl. Math." }
+ @String{CompPhys = "Journal of Computational Physics" }
+ @String{CompPhys = "J. Comput. Phys." }
+ @String{CompStruct = "Computers and Structures" }
+ @String{CompStruct = "Comput. \& Structures" }
+ @String{CompJour = "The Computer Journal" }
+ @String{CompJour = "Comput. J." }
+ @String{CompSysSci = "Journal of Computer and System Sciences" }
+ @String{CompSysSci = "J. Comput. System Sci." }
+ @String{Computing = "Computing" }
+ @String{ContempMath = "Contemporary Mathematics" }
+ @String{ContempMath = "Contemp. Math." }
+ @String{Crelle = "Crelle's Journal" }
+ @String{GiornaleMath = "Giornale di Mathematiche" }
+ @String{GiornaleMath = "Giorn. Mat." } % didn't find in AMS MR., ibid.
+
+ %IEEE
+ @String{Computer = "{IEEE} Computer" }
+ @String{IEEETransComp = "{IEEE} Transactions on Computers" }
+ @String{IEEETransComp = "{IEEE} Trans. Comput." }
+ @String{IEEETransAC = "{IEEE} Transactions on Automatic Control" }
+ @String{IEEETransAC = "{IEEE} Trans. Automat. Control" }
+ @String{IEEESpec = "{IEEE} Spectrum" } % didn't find in AMS MR
+ @String{ProcIEEE = "Proceedings of the {IEEE}" }
+ @String{ProcIEEE = "Proc. {IEEE}" } % didn't find in AMS MR
+ @String{IEEETransAeroElec = "{IEEE} Transactions on Aerospace and Electronic
+     Systems" }
+ @String{IEEETransAeroElec = "{IEEE} Trans. Aerospace Electron. Systems" }
+
+ @String{IMANumerAna = "{IMA} Journal of Numerical Analysis" }
+ @String{IMANumerAna = "{IMA} J. Numer. Anal." }
+ @String{InfProcLet = "Information Processing Letters" }
+ @String{InfProcLet = "Inform. Process. Lett." }
+ @String{InstMathApp = "Journal of the Institute of Mathematics and
+     its Applications" }
+ @String{InstMathApp = "J. Inst. Math. Appl." }
+ @String{IntControl = "International Journal of Control" }
+ @String{IntControl = "Internat. J. Control" }
+ @String{IntNumerEng = "International Journal for Numerical Methods in
+     Engineering" }
+ @String{IntNumerEng = "Internat. J. Numer. Methods Engrg." }
+ @String{IntSuper = "International Journal of Supercomputing Applications" }
+ @String{IntSuper = "Internat. J. Supercomputing Applic." } % didn't find
+%% in AMS MR
+ @String{Kibernetika = "Kibernetika" }
+ @String{JResNatBurStand = "Journal of Research of the National Bureau
+     of Standards" }
+ @String{JResNatBurStand = "J. Res. Nat. Bur. Standards" }
+ @String{LinAlgApp = "Linear Algebra and its Applications" }
+ @String{LinAlgApp = "Linear Algebra Appl." }
+ @String{MathAnaAppl = "Journal of Mathematical Analysis and Applications" }
+ @String{MathAnaAppl = "J. Math. Anal. Appl." }
+ @String{MathAnnalen = "Mathematische Annalen" }
+ @String{MathAnnalen = "Math. Ann." }
+ @String{MathPhys = "Journal of Mathematical Physics" }
+ @String{MathPhys = "J. Math. Phys." }
+ @String{MathComp = "Mathematics of Computation" }
+ @String{MathComp = "Math. Comp." }
+ @String{MathScand = "Mathematica Scandinavica" }
+ @String{MathScand = "Math. Scand." }
+ @String{TablesAidsComp = "Mathematical Tables and Other Aids to Computation" }
+ @String{TablesAidsComp = "Math. Tables Aids Comput." }
+ @String{NumerMath = "Numerische Mathematik" }
+ @String{NumerMath = "Numer. Math." }
+ @String{PacificMath = "Pacific Journal of Mathematics" }
+ @String{PacificMath = "Pacific J. Math." }
+ @String{ParDistComp = "Journal of Parallel and Distributed Computing" }
+ @String{ParDistComp = "J. Parallel and Distrib. Comput." } % didn't find
+%% in AMS MR
+ @String{ParComputing = "Parallel Computing" }
+ @String{ParComputing = "Parallel Comput." }
+ @String{PhilMag = "Philosophical Magazine" }
+ @String{PhilMag = "Philos. Mag." }
+ @String{ProcNAS = "Proceedings of the National Academy of Sciences
+                    of the USA" }
+ @String{ProcNAS = "Proc. Nat. Acad. Sci. U. S. A." }
+ @String{Psychometrika = "Psychometrika" }
+ @String{QuartMath = "Quarterly Journal of Mathematics, Oxford, Series (2)" }
+ @String{QuartMath = "Quart. J. Math. Oxford Ser. (2)" }
+ @String{QuartApplMath = "Quarterly of Applied Mathematics" }
+ @String{QuartApplMath = "Quart. Appl. Math." }
+ @String{RevueInstStat = "Review of the International Statisical Institute" }
+ @String{RevueInstStat = "Rev. Inst. Internat. Statist." }
+
+ %SIAM
+ @String{JSIAM = "Journal of the Society for Industrial and Applied
+     Mathematics" }
+ @String{JSIAM = "J. Soc. Indust. Appl. Math." }
+ @String{JSIAMB = "Journal of the Society for Industrial and Applied
+     Mathematics, Series B, Numerical Analysis" }
+ @String{JSIAMB = "J. Soc. Indust. Appl. Math. Ser. B Numer. Anal." }
+ @String{SIAMAlgMeth = "{SIAM} Journal on Algebraic and Discrete Methods" }
+ @String{SIAMAlgMeth = "{SIAM} J. Algebraic Discrete Methods" }
+ @String{SIAMAppMath = "{SIAM} Journal on Applied Mathematics" }
+ @String{SIAMAppMath = "{SIAM} J. Appl. Math." }
+ @String{SIAMComp = "{SIAM} Journal on Computing" }
+ @String{SIAMComp = "{SIAM} J. Comput." }
+ @String{SIAMMatrix = "{SIAM} Journal on Matrix Analysis and Applications" }
+ @String{SIAMMatrix = "{SIAM} J. Matrix Anal. Appl." }
+ @String{SIAMNumAnal = "{SIAM} Journal on Numerical Analysis" }
+ @String{SIAMNumAnal = "{SIAM} J. Numer. Anal." }
+ @String{SIAMReview = "{SIAM} Review" }
+ @String{SIAMReview = "{SIAM} Rev." }
+ @String{SIAMSciStat = "{SIAM} Journal on Scientific and Statistical
+     Computing" }
+ @String{SIAMSciStat = "{SIAM} J. Sci. Statist. Comput." }
+
+ @String{SoftPracExp = "Software Practice and Experience" }
+ @String{SoftPracExp = "Software Prac. Experience" } % didn't find in AMS MR
+ @String{StatScience = "Statistical Science" }
+ @String{StatScience = "Statist. Sci." }
+ @String{Techno = "Technometrics" }
+ @String{USSRCompMathPhys = "{USSR} Computational Mathematics and Mathematical
+     Physics" }
+ @String{USSRCompMathPhys = "{U. S. S. R.} Comput. Math. and Math. Phys." }
+ @String{VLSICompSys = "Journal of {VLSI} and Computer Systems" }
+ @String{VLSICompSys = "J. {VLSI} Comput. Syst." }
+ @String{ZAngewMathMech = "Zeitschrift fur Angewandte Mathematik und
+     Mechanik" }
+ @String{ZAngewMathMech = "Z. Angew. Math. Mech." }
+ @String{ZAngewMathPhys = "Zeitschrift fur Angewandte Mathematik und Physik" }
+ @String{ZAngewMathPhys = "Z. Angew. Math. Phys." }
+
+% Publishers % ================================================= |
+
+ @String{Academic = "Academic Press" }
+ @String{ACMPress = "{ACM} Press" }
+ @String{AdamHilger = "Adam Hilger" }
+ @String{AddisonWesley = "Addison-Wesley" }
+ @String{AllynBacon = "Allyn and Bacon" }
+ @String{AMS = "American Mathematical Society" }
+ @String{Birkhauser = "Birkha{\"u}ser" }
+ @String{CambridgePress = "Cambridge University Press" }
+ @String{Chelsea = "Chelsea" }
+ @String{ClaredonPress = "Claredon Press" }
+ @String{DoverPub = "Dover Publications" }
+ @String{Eyolles = "Eyolles" }
+ @String{HoltRinehartWinston = "Holt, Rinehart and Winston" }
+ @String{Interscience = "Interscience" }
+ @String{JohnsHopkinsPress = "The Johns Hopkins University Press" }
+ @String{JohnWileySons = "John Wiley and Sons" }
+ @String{Macmillan = "Macmillan" }
+ @String{MathWorks = "The Math Works Inc." }
+ @String{McGrawHill = "McGraw-Hill" }
+ @String{NatBurStd = "National Bureau of Standards" }
+ @String{NorthHolland = "North-Holland" }
+ @String{OxfordPress = "Oxford University Press" }  %address Oxford or London?
+ @String{PergamonPress = "Pergamon Press" }
+ @String{PlenumPress = "Plenum Press" }
+ @String{PrenticeHall = "Prentice-Hall" }
+ @String{SIAMPub = "{SIAM} Publications" }
+ @String{Springer = "Springer-Verlag" }
+ @String{TexasPress = "University of Texas Press" }
+ @String{VanNostrand = "Van Nostrand" }
+ @String{WHFreeman = "W. H. Freeman and Co." }
+
+%Entries
+% HERE WAS REMOVED!
+@INPROCEEDINGS{clark:pct,
+  AUTHOR = "Malcolm Clark",
+  TITLE = "Post Congress Tristesse",
+  BOOKTITLE = "TeX90 Conference Proceedings",
+  PAGES = "84-89",
+  ORGANIZATION = "TeX Users Group",
+  MONTH = "March",
+  YEAR = {1991}
+}
+
+@ARTICLE{herlihy:methodology,
+    author = {Herlihy, Maurice},
+    title = {A Methodology for Implementing Highly Concurrent Data Objects},
+    journal = {ACM Trans. Program. Lang. Syst.},
+    volume = {15},
+    number = {5},
+    pages = {745-770},
+    month = {November},
+    year = {1993},
+    doi = {10.1145/161468.161469},
+}
+
+@BOOK{salas:calculus,
+  AUTHOR = "S.L. Salas and Einar Hille",
+  TITLE = "Calculus: One and Several Variable",
+  PUBLISHER = "John Wiley and Sons",
+  ADDRESS = "New York",
+  YEAR = "1978"
+}
+
+@MANUAL{Fear05,
+  title =        {Publication quality tables in {\LaTeX}},
+  author =       {Simon Fear},
+  month =        {April},
+  year =         2005,
+  note =         {\url{http://www.ctan.org/pkg/booktabs}}
+}
+
+@Manual{Amsthm15,
+  title =        {Using the amsthm Package},
+  organization = {American Mathematical Society},
+  month =        {April},
+  year =         2015,
+  note =         {\url{http://www.ctan.org/pkg/amsthm}}
+}
+
+
+@incollection{AlexNet,
+  title = {ImageNet Classification with Deep Convolutional Neural Networks},
+  author = {Alex Krizhevsky and Sutskever, Ilya and Hinton, Geoffrey E},
+  booktitle = {Advances in Neural Information Processing Systems 25},
+  editor = {F. Pereira and C. J. C. Burges and L. Bottou and K. Q. Weinberger},
+  pages = {1097--1105},
+  year = {2012},
+  publisher = {Curran Associates, Inc.},
+  url = {http://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks.pdf}
+}
+
+@article{OverFeat,
+  author    = {Pierre Sermanet and
+               David Eigen and
+               Xiang Zhang and
+               Micha{\"{e}}l Mathieu and
+               Rob Fergus and
+               Yann LeCun},
+  title     = {OverFeat: Integrated Recognition, Localization and Detection using
+               Convolutional Networks},
+  journal   = {CoRR},
+  volume    = {abs/1312.6229},
+  year      = {2013},
+  url       = {http://arxiv.org/abs/1312.6229},
+  archivePrefix = {arXiv},
+  eprint    = {1312.6229},
+  timestamp = {Wed, 07 Jun 2017 14:42:22 +0200},
+  biburl    = {http://dblp.org/rec/bib/journals/corr/SermanetEZMFL13},
+  bibsource = {dblp computer science bibliography, http://dblp.org}
+}
+
+
+@article{VGG16,
+  author    = {Karen Simonyan and
+               Andrew Zisserman},
+  title     = {Very Deep Convolutional Networks for Large-Scale Image Recognition},
+  journal   = {CoRR},
+  volume    = {abs/1409.1556},
+  year      = {2014},
+  url       = {http://arxiv.org/abs/1409.1556},
+  archivePrefix = {arXiv},
+  eprint    = {1409.1556},
+  timestamp = {Wed, 07 Jun 2017 14:41:51 +0200},
+  biburl    = {http://dblp.org/rec/bib/journals/corr/SimonyanZ14a},
+  bibsource = {dblp computer science bibliography, http://dblp.org}
+}
+
+@article{NiN,
+  author    = {Min Lin and
+               Qiang Chen and
+               Shuicheng Yan},
+  title     = {Network In Network},
+  journal   = {CoRR},
+  volume    = {abs/1312.4400},
+  year      = {2013},
+  url       = {http://arxiv.org/abs/1312.4400},
+  archivePrefix = {arXiv},
+  eprint    = {1312.4400},
+  timestamp = {Wed, 07 Jun 2017 14:41:56 +0200},
+  biburl    = {http://dblp.org/rec/bib/journals/corr/LinCY13},
+  bibsource = {dblp computer science bibliography, http://dblp.org}
+}
+
+@article{Chair,
+  author    = {Alexey Dosovitskiy and
+               Jost Tobias Springenberg and
+               Thomas Brox},
+  title     = {Learning to Generate Chairs with Convolutional Neural Networks},
+  journal   = {CoRR},
+  volume    = {abs/1411.5928},
+  year      = {2014},
+  url       = {http://arxiv.org/abs/1411.5928},
+  archivePrefix = {arXiv},
+  eprint    = {1411.5928},
+  timestamp = {Wed, 07 Jun 2017 14:40:23 +0200},
+  biburl    = {http://dblp.org/rec/bib/journals/corr/DosovitskiySB14},
+  bibsource = {dblp computer science bibliography, http://dblp.org}
+}
+
+@article{Pix2Pix,
+  author    = {Phillip Isola and
+               Jun{-}Yan Zhu and
+               Tinghui Zhou and
+               Alexei A. Efros},
+  title     = {Image-to-Image Translation with Conditional Adversarial Networks},
+  journal   = {CoRR},
+  volume    = {abs/1611.07004},
+  year      = {2016},
+  url       = {http://arxiv.org/abs/1611.07004},
+  archivePrefix = {arXiv},
+  eprint    = {1611.07004},
+  timestamp = {Wed, 07 Jun 2017 14:41:37 +0200},
+  biburl    = {http://dblp.org/rec/bib/journals/corr/IsolaZZE16},
+  bibsource = {dblp computer science bibliography, http://dblp.org}
+}
+
+@article{DeepSpeech,
+  author    = {Awni Y. Hannun and
+               Carl Case and
+               Jared Casper and
+               Bryan Catanzaro and
+               Greg Diamos and
+               Erich Elsen and
+               Ryan Prenger and
+               Sanjeev Satheesh and
+               Shubho Sengupta and
+               Adam Coates and
+               Andrew Y. Ng},
+  title     = {Deep Speech: Scaling up end-to-end speech recognition},
+  journal   = {CoRR},
+  volume    = {abs/1412.5567},
+  year      = {2014},
+  url       = {http://arxiv.org/abs/1412.5567},
+  archivePrefix = {arXiv},
+  eprint    = {1412.5567},
+  timestamp = {Wed, 07 Jun 2017 14:42:46 +0200},
+  biburl    = {http://dblp.org/rec/bib/journals/corr/HannunCCCDEPSSCN14},
+  bibsource = {dblp computer science bibliography, http://dblp.org}
+}
+
+
+@article{ResNet,
+  author    = {Kaiming He and
+               Xiangyu Zhang and
+               Shaoqing Ren and
+               Jian Sun},
+  title     = {Deep Residual Learning for Image Recognition},
+  journal   = {CoRR},
+  volume    = {abs/1512.03385},
+  year      = {2015},
+  url       = {http://arxiv.org/abs/1512.03385},
+  archivePrefix = {arXiv},
+  eprint    = {1512.03385},
+  timestamp = {Wed, 07 Jun 2017 14:41:17 +0200},
+  biburl    = {http://dblp.org/rec/bib/journals/corr/HeZRS15},
+  bibsource = {dblp computer science bibliography, http://dblp.org}
+}
+
+@incollection{GAN,
+  title = {Generative Adversarial Nets},
+  author = {Goodfellow, Ian and Pouget-Abadie, Jean and Mirza, Mehdi and Xu, Bing and Warde-Farley, David and Ozair, Sherjil and Courville, Aaron and Bengio, Yoshua},
+  booktitle = {Advances in Neural Information Processing Systems 27},
+  editor = {Z. Ghahramani and M. Welling and C. Cortes and N. D. Lawrence and K. Q. Weinberger},
+  pages = {2672--2680},
+  year = {2014},
+  publisher = {Curran Associates, Inc.},
+  url = {http://papers.nips.cc/paper/5423-generative-adversarial-nets.pdf}
+}
+
+@article{DeepVisual,
+  author    = {Chelsea Finn and
+               Sergey Levine},
+  title     = {Deep Visual Foresight for Planning Robot Motion},
+  journal   = {CoRR},
+  volume    = {abs/1610.00696},
+  year      = {2016},
+  archivePrefix = {arXiv},
+  eprint    = {1610.00696},
+  timestamp = {Wed, 07 Jun 2017 14:42:20 +0200},
+  biburl    = {http://dblp.org/rec/bib/journals/corr/FinnL16},
+  bibsource = {dblp computer science bibliography, http://dblp.org}
+}
+
+@misc{JetsonTX2,
+  author = {Nvidia Corporation},
+  title = {{Jetson TX2 Module}},
+  howpublished = "\url{https://developer.nvidia.com/embedded/buy/jetson-tx2}",
+  year = {2018}, 
+  note = "[Online; accessed 15-January-2018]"
+}
+
+@misc{TeslaGPU,
+  author = {Nvidia Corporation},
+  title = {{TESLA DATA CENTER GPUS FOR SERVERS}},
+  howpublished = "\url{http://www.nvidia.com/object/tesla-servers.html}",
+  year = {2018}, 
+  note = "[Online; accessed 15-January-2018]"
+}
+
+@misc{iPhoneX,
+  author = {Apple Newsroom},
+  title = {{The future is here: iPhone X}},
+  howpublished = "\url{https://www.apple.com/newsroom/2017/09/the-future-is-here-iphone-x/}",
+  year = {2017}, 
+  note = "[Online; accessed 15-January-2018]"
+}
+
+@misc{INA226,
+  author = {Texas Instruments Incorporated},
+  title = {{INA Current/Power Monitor}},
+  howpublished = "\url{http://www.ti.com/product/INA226}",
+  year = {2018}, 
+  note = "[Online; accessed 15-January-2018]"
+}
+
+@article{TensorFlow,
+  author    = {Mart{\'{\i}}n Abadi and
+               Ashish Agarwal and
+               Paul Barham and
+               Eugene Brevdo and
+               Zhifeng Chen and
+               Craig Citro and
+               Gregory S. Corrado and
+               Andy Davis and
+               Jeffrey Dean and
+               Matthieu Devin and
+               Sanjay Ghemawat and
+               Ian J. Goodfellow and
+               Andrew Harp and
+               Geoffrey Irving and
+               Michael Isard and
+               Yangqing Jia and
+               Rafal J{\'{o}}zefowicz and
+               Lukasz Kaiser and
+               Manjunath Kudlur and
+               Josh Levenberg and
+               Dan Man{\'{e}} and
+               Rajat Monga and
+               Sherry Moore and
+               Derek Gordon Murray and
+               Chris Olah and
+               Mike Schuster and
+               Jonathon Shlens and
+               Benoit Steiner and
+               Ilya Sutskever and
+               Kunal Talwar and
+               Paul A. Tucker and
+               Vincent Vanhoucke and
+               Vijay Vasudevan and
+               Fernanda B. Vi{\'{e}}gas and
+               Oriol Vinyals and
+               Pete Warden and
+               Martin Wattenberg and
+               Martin Wicke and
+               Yuan Yu and
+               Xiaoqiang Zheng},
+  title     = {TensorFlow: Large-Scale Machine Learning on Heterogeneous Distributed
+               Systems},
+  journal   = {CoRR},
+  volume    = {abs/1603.04467},
+  year      = {2016},
+  url       = {http://arxiv.org/abs/1603.04467},
+  archivePrefix = {arXiv},
+  eprint    = {1603.04467},
+  timestamp = {Wed, 07 Jun 2017 14:40:20 +0200},
+  biburl    = {http://dblp.org/rec/bib/journals/corr/AbadiABBCCCDDDG16},
+  bibsource = {dblp computer science bibliography, http://dblp.org}
+}
+
+@article{cuDNN,
+  author    = {Sharan Chetlur and
+               Cliff Woolley and
+               Philippe Vandermersch and
+               Jonathan Cohen and
+               John Tran and
+               Bryan Catanzaro and
+               Evan Shelhamer},
+  title     = {cuDNN: Efficient Primitives for Deep Learning},
+  journal   = {CoRR},
+  volume    = {abs/1410.0759},
+  year      = {2014},
+  url       = {http://arxiv.org/abs/1410.0759},
+  archivePrefix = {arXiv},
+  eprint    = {1410.0759},
+  timestamp = {Wed, 07 Jun 2017 14:40:09 +0200},
+  biburl    = {http://dblp.org/rec/bib/journals/corr/ChetlurWVCTCS14},
+  bibsource = {dblp computer science bibliography, http://dblp.org}
+}
+
+@misc{MobNet,
+  author = {OpenSignal.com},
+  title = {{State of Mobile Networks: USA}},
+  howpublished = "\url{https://opensignal.com/reports/2017/08/usa/state-of-the-mobile-network}",
+  year = {2017}, 
+  note = "[Online; accessed 15-January-2018]"
+}
+
+@misc{Speedtest,
+  author = {OpenSignal.com},
+  title = {{United States Speedtest Market Report}},
+  howpublished = "\url{http://www.speedtest.net/reports/united-states/}",
+  year = {2017}, 
+  note = "[Online; accessed 15-January-2018]"
+}
+
+% MODIFIED URL
+@inproceedings{4GLTE,
+   author = {Huang, Junxian and Qian, Feng and Gerber, Alexandre and Mao, Z. Morley and Sen, Subhabrata and Spatscheck, Oliver},
+   title = {A Close Examination of Performance and Power Characteristics of 4G LTE Networks},
+   booktitle = {Proceedings of the 10th International Conference on Mobile Systems, Applications, and Services},
+   series = {MobiSys '12},
+   year = {2012},
+   isbn = {978-1-4503-1301-8},
+   location = {Low Wood Bay, Lake District, UK},
+   pages = {225--238},
+   numpages = {14},
+   acmid = {2307658},
+   publisher = {ACM},
+   address = {New York, NY, USA},
+   keywords = {3g, 4g, 4gtest, energy saving, lte, network model simulation, power model simulation},
+} 
+
+@book{InformationTheoryCover,
+ author = {Cover, Thomas M. and Thomas, Joy A.},
+ title = {Elements of Information Theory (Wiley Series in Telecommunications and Signal Processing)},
+ year = {2006},
+ isbn = {0471241954},
+ publisher = {Wiley-Interscience},
+} 
+
+
+@article{efficientDNN,
+  author    = {Vivienne Sze and
+               Yu{-}Hsin Chen and
+               Tien{-}Ju Yang and
+               Joel S. Emer},
+  title     = {Efficient Processing of Deep Neural Networks: {A} Tutorial and Survey},
+  journal   = {CoRR},
+  volume    = {abs/1703.09039},
+  year      = {2017},
+  url       = {http://arxiv.org/abs/1703.09039},
+  archivePrefix = {arXiv},
+  eprint    = {1703.09039},
+  timestamp = {Wed, 07 Jun 2017 14:41:40 +0200},
+  biburl    = {http://dblp.org/rec/bib/journals/corr/SzeCYE17},
+  bibsource = {dblp computer science bibliography, http://dblp.org}
+}
+
+@InProceedings{ReLUpaper,
+  title = 	 {Deep Sparse Rectifier Neural Networks},
+  author = 	 {Xavier Glorot and Antoine Bordes and Yoshua Bengio},
+  booktitle = 	 {Proceedings of the Fourteenth International Conference on Artificial Intelligence and Statistics},
+  pages = 	 {315--323},
+  year = 	 {2011},
+  editor = 	 {Geoffrey Gordon and David Dunson and Miroslav Dudík},
+  volume = 	 {15},
+  series = 	 {Proceedings of Machine Learning Research},
+  address = 	 {Fort Lauderdale, FL, USA},
+  month = 	 {11--13 Apr},
+  publisher = 	 {PMLR},
+  pdf = 	 {http://proceedings.mlr.press/v15/glorot11a/glorot11a.pdf},
+  url = 	 {http://proceedings.mlr.press/v15/glorot11a.html}
+}
+
+@article{GPU4NN,
+  author = {Oh, Kyoung-Su and Jung, Keechul},
+  year = {2004},
+  month = {06},
+  pages = {1311-1314},
+  title = {GPU implementation of neural networks},
+  volume = {37},
+  booktitle = {Pattern Recognition}
+}
+
+
+@article{CloneCloud,
+ author = {Chun, Byung-Gon and Ihm, Sunghwan and Maniatis, Petros and Naik, Mayur and Patti, Ashwin},
+ title = {CloneCloud: Elastic Execution Between Mobile Device and Cloud},
+ booktitle = {Proceedings of the Sixth Conference on Computer Systems},
+ series = {EuroSys '11},
+ year = {2011},
+ isbn = {978-1-4503-0634-8},
+ location = {Salzburg, Austria},
+ pages = {301--314},
+ numpages = {14},
+ acmid = {1966473},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {migration, mobile cloud computing, offloading, partitioning, smartphones},
+} 
+
+@article{CloudEdgeDevice,
+  author    = {Surat Teerapittayanon and
+               Bradley McDanel and
+               H. T. Kung},
+  title     = {Distributed Deep Neural Networks over the Cloud, the Edge and End
+               Devices},
+  journal   = {CoRR},
+  volume    = {abs/1709.01921},
+  year      = {2017},
+  url       = {http://arxiv.org/abs/1709.01921},
+  archivePrefix = {arXiv},
+  eprint    = {1709.01921},
+  timestamp = {Thu, 05 Oct 2017 09:42:49 +0200},
+  biburl    = {http://dblp.org/rec/bib/journals/corr/abs-1709-01921},
+  bibsource = {dblp computer science bibliography, http://dblp.org}
+}
+
+@inproceedings{DistributedDNN,
+  author = {Dean, Jeffrey and Corrado, Greg S. and Monga, Rajat and Chen, Kai and Devin, Matthieu and Le, Quoc V. and Mao, Mark Z. and Ranzato, Marc'Aurelio and Senior, Andrew and Tucker, Paul and Yang, Ke and Ng, Andrew Y.},
+  title = {Large Scale Distributed Deep Networks},
+  booktitle = {Proceedings of the 25th International Conference on Neural Information Processing Systems - Volume 1},
+  series = {NIPS'12},
+  year = {2012},
+  location = {Lake Tahoe, Nevada},
+  pages = {1223--1231},
+  numpages = {9},
+  url = {http://dl.acm.org/citation.cfm?id=2999134.2999271},
+  acmid = {2999271},
+  publisher = {Curran Associates Inc.},
+  address = {USA},
+} 
+
+@Article{DewComputing,
+  title     = {Scalable Distributed Computing Hierarchy: Cloud, Fog and Dew Computing},
+  author    = {Karolj Skala and
+  Davor Davidovic and
+  Enis Afgan and
+  Ivan Sovic and
+  Zorislav Sojat},
+  journal   = {Open Journal of Cloud Computing (OJCC)},
+  issn      = {2199-1987},
+  year      = {2015},
+  volume    = {2},
+  number    = {1},
+  pages     = {16--24},
+  url       = {http://nbn-resolving.de/urn:nbn:de:101:1-201705194519},
+  urn       = {urn:nbn:de:101:1-201705194519},
+  publisher = {RonPub},
+  bibsource = {RonPub},
+}
+
+@article{animoji,
+  author = {Li, Hao and Yu, Jihun and Ye, Yuting and Bregler, Chris},
+  title = {Realtime Facial Animation with On-the-fly Correctives},
+  journal = {ACM Trans. Graph.},
+  issue_date = {July 2013},
+  volume = {32},
+  number = {4},
+  month = jul,
+  year = {2013},
+  issn = {0730-0301},
+  pages = {42:1--42:10},
+  articleno = {42},
+  numpages = {10},
+  acmid = {2462019},
+  publisher = {ACM},
+  address = {New York, NY, USA},
+  keywords = {correctives, depth sensor, facial animation, facial retargeting, incremental PCA, performance capture, real-time tracking},
+} 
+
+@article{AdaptiveCar,
+  author    = {Yunpeng Pan and
+               Ching{-}An Cheng and
+               Kamil Saigol and
+               Keuntaek Lee and
+               Xinyan Yan and
+               Evangelos Theodorou and
+               Byron Boots},
+  title     = {Agile Off-Road Autonomous Driving Using End-to-End Deep Imitation
+               Learning},
+  journal   = {CoRR},
+  volume    = {abs/1709.07174},
+  year      = {2017},
+  url       = {http://arxiv.org/abs/1709.07174},
+  archivePrefix = {arXiv},
+  eprint    = {1709.07174},
+  timestamp = {Thu, 05 Oct 2017 09:43:08 +0200},
+  biburl    = {http://dblp.org/rec/bib/journals/corr/abs-1709-07174},
+  bibsource = {dblp computer science bibliography, http://dblp.org}
+}
+
+@article{LARAC,
+author={A. Juttner and B. Szviatovski and I. Mecs and Z. Rajko}, 
+booktitle={Proceedings IEEE INFOCOM 2001. Conference on Computer Communications. Twentieth Annual Joint Conference of the IEEE Computer and Communications Society (Cat. No.01CH37213)}, 
+title={Lagrange relaxation based method for the QoS routing problem}, 
+year={2001}, 
+volume={2}, 
+number={}, 
+pages={859-868 vol.2}, 
+keywords={optimisation;polynomials;quality of service;relaxation theory;telecommunication network routing;Lagrange relaxation based method;QoS routing problem;aggregated costs;delay constrained least cost routing problem;exponential algorithm;lower bound;numerical evaluation;optimal multiplier;polynomial time algorithm;Costs;Internet;Lagrangian functions;Performance analysis;Polynomials;Propagation delay;Quality of service;Resource management;Routing;Telecommunication traffic}, 
+ISSN={0743-166X}, 
+month={},}
+
+
+@INPROCEEDINGS{multiStageArc, 
+  author={K. Jarrett and K. Kavukcuoglu and M. Ranzato and Y. LeCun}, 
+  booktitle={2009 IEEE 12th International Conference on Computer Vision}, 
+  title={What is the best multi-stage architecture for object recognition?}, 
+  year={2009}, 
+  volume={}, 
+  number={}, 
+  pages={2146-2153}, 
+  keywords={feature extraction;object recognition;unsupervised learning;Caltech-101;NORB dataset;feature extraction;feature pooling layer;feature rectification;filter bank;local contrast normalization;multistage architecture;nonlinear transformation;object recognition;supervised learning;unprocessed MNIST dataset;unsupervised learning;Brain modeling;Error analysis;Feature extraction;Filter bank;Gabor filters;Histograms;Image edge detection;Learning systems;Object recognition;Refining}, 
+	ISSN={1550-5499}, 
+	month={Sept},
+}
+
+@article{DropOut,
+  author = {Srivastava, Nitish and Hinton, Geoffrey and Krizhevsky, Alex and Sutskever, Ilya and Salakhutdinov, Ruslan},
+  title = {Dropout: A Simple Way to Prevent Neural Networks from Overfitting},
+  journal = {J. Mach. Learn. Res.},
+  issue_date = {January 2014},
+  volume = {15},
+  number = {1},
+  month = jan,
+  year = {2014},
+  issn = {1532-4435},
+  pages = {1929--1958},
+  numpages = {30},
+  url = {http://dl.acm.org/citation.cfm?id=2627435.2670313},
+  acmid = {2670313},
+  publisher = {JMLR.org},
+  keywords = {deep learning, model combination, neural networks, regularization},
+} 
+
+@article{Oedessa,
+ author = {Ra, Moo-Ryong and Sheth, Anmol and Mummert, Lily and Pillai, Padmanabhan and Wetherall, David and Govindan, Ramesh},
+ title = {Odessa: Enabling Interactive Perception Applications on Mobile Devices},
+ booktitle = {Proceedings of the 9th International Conference on Mobile Systems, Applications, and Services},
+ series = {MobiSys '11},
+ year = {2011},
+ isbn = {978-1-4503-0643-0},
+ location = {Bethesda, Maryland, USA},
+ pages = {43--56},
+ numpages = {14},
+ url = {http://doi.acm.org/10.1145/1999995.2000000},
+ doi = {10.1145/1999995.2000000},
+ acmid = {2000000},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {incremental partitioning, mobile perception application, offloading, parallel processing, video processing},
+} 
+@article{Comet,
+ author = {Gordon, Mark S. and Jamshidi, D. Anoushe and Mahlke, Scott and Mao, Z. Morley and Chen, Xu},
+ title = {COMET: Code Offload by Migrating Execution Transparently},
+ booktitle = {Proceedings of the 10th USENIX Conference on Operating Systems Design and Implementation},
+ series = {OSDI'12},
+ year = {2012},
+ isbn = {978-1-931971-96-6},
+ location = {Hollywood, CA, USA},
+ pages = {93--106},
+ numpages = {14},
+ url = {http://dl.acm.org/citation.cfm?id=2387880.2387890},
+ acmid = {2387890},
+ publisher = {USENIX Association},
+ address = {Berkeley, CA, USA},
+}
+
+@article{MAUI,
+ author = {Cuervo, Eduardo and Balasubramanian, Aruna and Cho, Dae-ki and Wolman, Alec and Saroiu, Stefan and Chandra, Ranveer and Bahl, Paramvir},
+ title = {MAUI: Making Smartphones Last Longer with Code Offload},
+ booktitle = {Proceedings of the 8th International Conference on Mobile Systems, Applications, and Services},
+ series = {MobiSys '10},
+ year = {2010},
+ isbn = {978-1-60558-985-5},
+ location = {San Francisco, California, USA},
+ pages = {49--62},
+ numpages = {14},
+ url = {http://doi.acm.org/10.1145/1814433.1814441},
+ doi = {10.1145/1814433.1814441},
+ acmid = {1814441},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {code offload, energy management, partitioning, smartphones},
+} 
+
+% MODIFIED URL
+@article{ExecutionJavaScript,
+ author = {Wang, Xudong and Liu, Xuanzhe and Zhang, Ying and Huang, Gang},
+ title = {Migration and Execution of JavaScript Applications Between Mobile Devices and Cloud},
+ booktitle = {Proceedings of the 3rd Annual Conference on Systems, Programming, and Applications: Software for Humanity},
+ series = {SPLASH '12},
+ year = {2012},
+ isbn = {978-1-4503-1563-0},
+ location = {Tucson, Arizona, USA},
+ pages = {83--84},
+ numpages = {2},
+ doi = {10.1145/2384716.2384750},
+ acmid = {2384750},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {cloud computing, javascript, offloading},
+} 
+
+% MODIFIED URL
+@article{Refactoring,
+ author = {Zhang, Ying and Huang, Gang and Liu, Xuanzhe and Zhang, Wei and Mei, Hong and Yang, Shunxiang},
+ title = {Refactoring Android Java Code for On-demand Computation Offloading},
+ journal = {SIGPLAN Not.},
+ issue_date = {October 2012},
+ volume = {47},
+ number = {10},
+ month = oct,
+ year = {2012},
+ issn = {0362-1340},
+ pages = {233--248},
+ numpages = {16},
+ doi = {10.1145/2398857.2384634},
+ acmid = {2384634},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {android, bytecode refactoring, computation offloading, energy},
+} 
+
+@article{DeepX, 
+author={N. D. Lane and S. Bhattacharya and P. Georgiev and C. Forlivesi and L. Jiao and L. Qendro and F. Kawsar}, 
+booktitle={2016 15th ACM/IEEE International Conference on Information Processing in Sensor Networks (IPSN)}, 
+title={DeepX: A Software Accelerator for Low-Power Deep Learning Inference on Mobile Devices}, 
+year={2016}, 
+volume={}, 
+number={}, 
+pages={1-12}, 
+keywords={inference mechanisms;learning (artificial intelligence);mobile computing;power aware computing;DeepX;cloud-based offloading;heterogeneous local device processors;high-level information extraction;low-power deep learning inference;mobile apps;mobile devices;mobile processors;monolithic deep model network architectures;resource control algorithms;sensor data;software accelerator;Computational modeling;Computer architecture;Inference algorithms;Machine learning;Mobile communication;Program processors;Runtime}, 
+doi={10.1109/IPSN.2016.7460664}, 
+ISSN={}, 
+month={April},}
+
+@article{Paleo,
+  author={Hang Qi and Evan R. Sparks and Ameet Talwalkar},
+  booktitle={Proceedings of the International Conference on Learning Representations},
+  title={Paleo: A Performance Model for Deep Neural Networks},
+  year={2017}
+}
+
+% MODIFIED:
+@INPROCEEDINGS{Deconv, 
+  author={M. D. Zeiler and D. Krishnan and G. W. Taylor and R. Fergus}, 
+  booktitle={2010 IEEE Computer Society Conference on Computer Vision and Pattern Recognition}, 
+  title={Deconvolutional networks}, 
+  year={2010}, 
+  volume={}, 
+  number={}, 
+  pages={2528-2535}, 
+  keywords={deconvolution;image representation;deconvolutional networks;edge primitives;feature detectors;image representations;images synthesis;pool edge information;Computer architecture;Convolution;Decoding;Feature extraction;Filters;Image edge detection;Image representation;Image restoration;Object recognition;Robustness}, 
+  doi={10.1109/CVPR.2010.5539957}, 
+  ISSN={1063-6919}, 
+  month={June},
+}
+
+% MODIFIED URL
+@article{GPUMODEL,
+ author = {Hong, Sunpyo and Kim, Hyesoon},
+ title = {An Integrated GPU Power and Performance Model},
+ journal = {SIGARCH Comput. Archit. News},
+ issue_date = {June 2010},
+ volume = {38},
+ number = {3},
+ month = jun,
+ year = {2010},
+ issn = {0163-5964},
+ pages = {280--289},
+ numpages = {10},
+ doi = {10.1145/1816038.1815998},
+ acmid = {1815998},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {CUDA, GPU architecture, analytical model, energy, performance, power estimation},
+} 
+
+% MODIFIED URL
+@inproceedings{Neurosurgeon,
+  author = {Kang, Yiping and Hauswald, Johann and Gao, Cao and Rovinski, Austin and Mudge, Trevor and Mars, Jason and Tang, Lingjia},
+  title = {Neurosurgeon: Collaborative Intelligence Between the Cloud and Mobile Edge},
+  booktitle = {Proceedings of the Twenty-Second International Conference on Architectural Support for Programming Languages and Operating Systems},
+  series = {ASPLOS '17},
+  year = {2017},
+  isbn = {978-1-4503-4465-4},
+  location = {Xi'an, China},
+  pages = {615--629},
+  numpages = {15},
+  doi = {10.1145/3037697.3037698},
+  acmid = {3037698},
+  publisher = {ACM},
+  address = {New York, NY, USA},
+  keywords = {cloud computing, deep neural networks, intelligent applications, mobile computing},
+} 
+
+% MODIFIED URL
+@article{Cuda,
+ author = {Nickolls, John and Buck, Ian and Garland, Michael and Skadron, Kevin},
+ title = {Scalable Parallel Programming with CUDA},
+ journal = {Queue},
+ issue_date = {March/April 2008},
+ volume = {6},
+ number = {2},
+ month = mar,
+ year = {2008},
+ issn = {1542-7730},
+ pages = {40--53},
+ numpages = {14},
+ doi = {10.1145/1365490.1365500},
+ acmid = {1365500},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+} 
+
+% MODIFIED URL
+@ARTICLE{NPComplete, 
+author={Zheng Wang and J. Crowcroft}, 
+journal={IEEE Journal on Selected Areas in Communications}, 
+title={Quality-of-service routing for supporting multimedia applications}, 
+year={1996}, 
+volume={14}, 
+number={7}, 
+pages={1228-1234}, 
+keywords={digital communication;multimedia communication;telecommunication network routing;digital audio;digital video;hop-by-hop routing;multimedia applications;path computation algorithms;quality-of-service routing;routing metric selection;source routing;Admission control;Bandwidth;Computer architecture;Computer networks;Costs;Delay;Quality of service;Routing protocols;Scalability;Scheduling algorithm}, 
+doi={10.1109/49.536364}, 
+ISSN={0733-8716}, 
+month={Sep},}
+
+@inproceedings{EASI,
+  title={A Hardware-Friendly Algorithm for Scalable Training and Deployment of  Dimensionality Reduction Models on {FPGA}},
+  author={Nazemi, Mahdi and Eshratifar, Amir Erfan and Pedram, Massoud},
+  booktitle={Proceedings of the 19th IEEE International Symposium on Quality Electronic Design},
+  year={2018}
+}
+
+% MODIFIED URL
+@INPROCEEDINGS{SAMRAGH, 
+author={M. S. Razlighi and M. Imani and F. Koushanfar and T. Rosing}, 
+booktitle={Design, Automation Test in Europe Conference Exhibition (DATE), 2017}, 
+title={LookNN: Neural network with no multiplication}, 
+year={2017}, 
+volume={}, 
+number={}, 
+pages={1775-1780}, 
+keywords={graphics processing units;neural nets;table lookup;AMD Southern Island GPU architecture;LookNN;additive error;associative memory;general purpose processors;look-up table search;neural networks;Additives;Artificial neural networks;Associative memory;Computational modeling;Graphics processing units;Neurons;Table lookup}, 
+doi={10.23919/DATE.2017.7927280}, 
+ISSN={}, 
+month={March},}
+
+@article{DCNN4Mobile_ICLR16,
+  author    = {Yong{-}Deok Kim and
+               Eunhyeok Park and
+               Sungjoo Yoo and
+               Taelim Choi and
+               Lu Yang and
+               Dongjun Shin},
+  title     = {Compression of Deep Convolutional Neural Networks for Fast and Low
+               Power Mobile Applications},
+  journal   = {CoRR},
+  volume    = {abs/1511.06530},
+  year      = {2015},
+  url       = {http://arxiv.org/abs/1511.06530},
+  archivePrefix = {arXiv},
+  eprint    = {1511.06530},
+  timestamp = {Wed, 07 Jun 2017 14:42:55 +0200},
+  biburl    = {http://dblp.org/rec/bib/journals/corr/KimPYCYS15},
+  bibsource = {dblp computer science bibliography, http://dblp.org}
+}
